@@ -1,21 +1,21 @@
 {
     "Version": "2012-10-17",
     "Statement": [
-      {
-        "Effect": "Allow",
-        "Principal": {
-          "Federated": "arn:aws:iam::357171621133:oidc-provider/token.actions.githubusercontent.com"
-        },
-        "Action": "sts:AssumeRoleWithWebIdentity",
-        "Condition": {
-          "StringEquals": {
-            "token.actions.githubusercontent.com:sub": [
-              "repo:RekhuGopal/GitHub-Action-OIDCConnect:pull_request",
-              "repo:RekhuGopal/GitHub-Action-OIDCConnect:ref:refs/heads/main"
-            ],
-            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
-          }
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Federated": "arn:aws:iam::089982592095:oidc-provider/token.actions.githubusercontent.com"
+            },
+            "Action": "sts:AssumeRoleWithWebIdentity",
+            "Condition": {
+                "StringEquals": {
+                    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+                    "token.actions.githubusercontent.com:sub": [
+                        "repo:dimitri12482/ecs-github-actions:pull_request",
+                        "repo:dimitri12482/ecs-github-actions:ref:refs/heads/main"
+                    ]
+                }
+            }
         }
-      }
     ]
-  }
+}
